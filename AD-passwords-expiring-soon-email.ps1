@@ -1,3 +1,4 @@
+. $PSScriptRoot\send-email.ps1
 # This script exports a csv with passwords expiring that week
 # Declare expiring soon group variable
 $expiring = @()
