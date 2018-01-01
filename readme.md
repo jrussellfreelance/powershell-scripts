@@ -8,7 +8,7 @@ PowerShellHelp is a script that launches a GUI allowing you to view the Powershe
 
 Screenshot:
 ![alt text](https://www.jesserussell.net/wp-content/uploads/2017/11/powershellhelp1.png)
-Powershell-Cmdlet-Explorer lists all installed modules, and by clicking on a module, you can see the cmdlets for that module.
+Powershell-Cmdlet-Explorer lists all installed modules, and by clicking on a module, you can see the cmdlets for that module. When you click on a cmdlet, you can see the help information for it.
 
 Screenshot:
 ![alt text](https://www.jesserussell.net/wp-content/uploads/2018/01/powershell-cmdlet-explorer2.png)
