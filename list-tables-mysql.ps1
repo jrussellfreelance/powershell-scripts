@@ -1,4 +1,5 @@
-﻿# Install-Module InvokeQuery
+﻿# This script lists all of the tables in a MySQL database and exports the list as a CSV
+# Install-Module InvokeQuery
 # Run the above command if you do not have this module
 $csvfilepath = "$PSScriptRoot\mysql_tables.csv"
 Do {
