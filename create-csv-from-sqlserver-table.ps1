@@ -1,4 +1,6 @@
-﻿$csvfilepath = "$PSScriptRoot\sqlserver_table.csv"
+﻿# Install-Module InvokeQuery
+# Run the above command if you do not have this module
+$csvfilepath = "$PSScriptRoot\sqlserver_table.csv"
 Do {
 	$server = Read-Host "Please enter the server host name or IP of the database"
 }
