@@ -26,6 +26,7 @@ While ($dest -eq "")
 $now = Get-Date -Format MM-dd-yyyy
 # Start robocopy
 robocopy $source $dest /E /ZB /DCOPY:T /COPYALL /R:1 /W:1 /V /TEE /LOG:$now.log
+New-BurntToastNotification -Text "The files have been copied" -AppLogo $null -Silent
 # Transfer file share registry keys
 # Get shares from old server
 $Key = "SYSTEM\CurrentControlSet\services\LanmanServer\Shares"

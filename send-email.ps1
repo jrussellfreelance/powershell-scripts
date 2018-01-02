@@ -73,4 +73,5 @@ function Send-Email($subject, $body, $from, $to, $cc, $bcc, $priority, $attachme
     }
 
 	$smtpClient.Send($message)
+    New-BurntToastNotification -Text "Email has been sent" -AppLogo $null -Silent
 }

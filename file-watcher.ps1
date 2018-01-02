@@ -8,6 +8,7 @@ $fsw = New-Object IO.FileSystemWatcher $folder, $filter -Property @{IncludeSubdi
 # Start file watch
 Register-ObjectEvent $fsw Created -SourceIdentifier FileWatcher -Action {
     $filename = $Event.SourceEventArgs.Name
+    New-BurntToastNotification -Text "$filename has been created..." -AppLogo $null -Silent
     $changeType = $Event.SourceEventArgs.ChangeType
     $timeStamp = $Event.TimeGenerated
     $app="powershell.exe"

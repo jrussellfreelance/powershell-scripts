@@ -64,3 +64,4 @@ Start-Sleep -Seconds 1
 $return = $stream.Read()
 Write-Host $return
 # Finished
+New-BurntToastNotification -Text "Wordpress site has been removed" -AppLogo $null -Silent

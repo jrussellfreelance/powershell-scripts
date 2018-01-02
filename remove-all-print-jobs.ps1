@@ -6,3 +6,4 @@ foreach ($printer in $printers) {
         Remove-PrintJob -InputObject $printjob
     }
 }
+New-BurntToastNotification -Text "All print jobs removed" -AppLogo $null -Silent

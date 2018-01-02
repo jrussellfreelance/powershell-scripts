@@ -154,3 +154,4 @@ Start-Sleep -Seconds 1
 $return = $stream.Read()
 Write-Host $return
 # Finished
+New-BurntToastNotification -Text "The new Wordpress instance has been created" -AppLogo $null -Silent

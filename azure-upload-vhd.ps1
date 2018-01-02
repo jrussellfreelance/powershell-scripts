@@ -24,6 +24,7 @@ if ($vhdcheck -eq "vhd") {
     While ($destinationPath -eq "")
     Write-Host "Converting vhdx to vhd..."
     Convert-VHD -Path $pathToVhd -DestinationPath  $destinationPath
+    New-BurntToastNotification -Text "VHDX converted to VHD" -AppLogo $null -Silent
 }
 # Specify the Azure resource group
 Do {
@@ -53,3 +54,4 @@ Get-AzureRmSubscription –SubscriptionName $subscription | Select-AzureRmSubscr
 # Upload the vhd to Azure
 Write-Host "Uploading VHD to Azure..."
 Add-AzureRmVhd -ResourceGroupName $resourcegroup -LocalFilePath $destinationPath -Destination $vhdurl -OverWrite
+New-BurntToastNotification -Text "VHD has been uploaded to Azure" -AppLogo $null -Silent

@@ -18,6 +18,7 @@ foreach ($vm in $vms) {
     New-Item -ItemType Directory -Path "$backuppath\$vmname\$today"
     # Export the VM
     Export-VM -VM $vm -Path "$backuppath\$vmname\$today"
+    New-BurntToastNotification -Text "$vmname has been exported." -AppLogo $null -Silent
     # Remove any backups older than the past 7 days
     Get-ChildItem "$backuppath\$vmname" | Sort-Object -Property CreationTime -Descending | Select-Object -Skip 7 | Remove-Item -Recurse
 }

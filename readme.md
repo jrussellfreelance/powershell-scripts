@@ -1,13 +1,15 @@
 ## My PowerShell Scripts
-As requested, here is a list of all the scripts I could make generic, and that aren't exclusive to where I work.  I am still new to PowerShell, so forgive me if my scripts seem stupid or not helpful.  If you open up a script, I explain what it does in the comments.
+As requested, here is a list of all the scripts I could make generic, and that aren't exclusive to where I work.  I am still new to PowerShell, so forgive me if my scripts seem stupid or not helpful.  If you open up a script, I explain what it does in the comments.  Also, in general I need to add in some more error checking and verification of success, because normally I am so used to being the only person who uses the script, so I know what not to do.
 
 Notes:
-The scripts inside the two folders have GUIs.  To open the GUI, run the script that does not say designer at the end.
+* The scripts inside the two folders have GUIs.  To open the GUI, run the script that does not say designer at the end.
+* I use the BurntToast module a decent bit for notifications, so if you think you might use any of these scripts, I would go ahead and install that module. `Install-Module BurntToast`
 
 PowerShellHelp is a script that launches a GUI allowing you to view the Powershell help for a cmdlet.
 
 Screenshot:
 ![alt text](https://www.jesserussell.net/wp-content/uploads/2017/11/powershellhelp1.png)
+
 Powershell-Cmdlet-Explorer lists all installed modules, and by clicking on a module, you can see the cmdlets for that module. When you click on a cmdlet, you can see the help information for it.
 
 Screenshot:
@@ -21,6 +23,8 @@ AD-passwords-expiring-csv.ps1: Creates a csv of Active Directory users whose pas
 
 AD-passwords-expiring-soon-email.ps1: Sends an email to any user whose password expires in the next 7 days
 
+add-folder-to-path-env.ps1: Adds a folder to the Path environment variable
+
 azure-upload-vhd.ps1: Uploads a Hyper-V VHD to Azure.
 
 clean-system-local.ps1: Calls a couple of clean up utilities on your local machine.
@@ -32,6 +36,12 @@ create-cmdlets-js.ps1: Creates a JSON array of all cmdlets and stores in a Javas
 create-csv-from-mysql-table.ps1: Creates a csv pf a MySQL table based on the SQL query specified.
 
 create-csv-from-sqlserver-table.ps1: Creates a csv pf a SQL Server table based on the SQL query specified.
+
+create-startup-executable.ps1: Creates a scheduled task of an executable file that runs on start up.
+
+create-startup-powershell-script.ps1: Creates a scheduled task of a Powershell script that runs on start up.
+
+create-symbolic-link.ps1: Creates a symbolic link.
 
 delete-IIS-site.ps1: Deletes a website, app pool, and dns entry on remote servers.
 
@@ -58,6 +68,10 @@ list-tables-mysql.ps1: Lists the tables from a MySQL database in a CSV.
 list-tables-sqlserver.ps1: Lists the tables from a SQL Server database in a CSV.
 
 monitor-webpage.ps1: Monitors a web page, sending an email if the site goes down.
+
+network-tools-install-modules.ps1: Installs the modules necessary for the network-tools.ps1 script
+
+network-tools.ps1: Offers you a simple menu gui where you can select network operations to perform, like ping and scan for ports.
 
 nodejs-forever-startapps.ps1: Loops through every folder inside a root folder and starts a Node.js app inside each.
 
