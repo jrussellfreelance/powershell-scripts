@@ -29,6 +29,8 @@ azure-upload-vhd.ps1: Uploads a Hyper-V VHD to Azure.
 
 clean-system-local.ps1: Calls a couple of clean up utilities on your local machine.
 
+continuous-git-clone.ps1: Continuously prompts for a git repo and downloads.
+
 copy-everything.ps1: Copies files, shares, permissions, ownership, and timestamps to a new location.
 
 create-cmdlets-js.ps1: Creates a JSON array of all cmdlets and stores in a Javascript file.
@@ -82,6 +84,8 @@ plex-manufacturing-cloud.ps1: Contains functions that can be used to connect to 
 remove-all-print-jobs.ps1: Removes all jobs from all printers.
 
 send-email.ps1: Contains a function that sends an email.
+
+server-system-info-website.ps1: Grabs system information using WMI for each server listed in servers.txt and outputs it into the web root of a website.
 
 setup-domain-controller.ps1: Installs features for a domain controller.
 
