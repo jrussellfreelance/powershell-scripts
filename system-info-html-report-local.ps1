@@ -1,7 +1,7 @@
 ﻿# This script grabs system information using WMI and outputs it to a HTML report
 # File paths
 $reportPath = $PSScriptRoot + "\report.html"
-
+$date = Get-Date
 # Computer info
 $ram = [math]::Round((Get-WmiObject Win32_OperatingSystem | Select -ExpandProperty TotalVisibleMemorySize)/1MB, 2)
 $free = [math]::Round((Get-WmiObject Win32_OperatingSystem | Select -ExpandProperty FreePhysicalMemory)/1MB, 2)
@@ -26,7 +26,7 @@ $computerProps = @{
 	'Last Boot'= $boot
 }
 $computer = New-Object -TypeName PSObject -Prop $computerProps
-$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>Computer Report - $(Get-Date)</h1><h2>System Information</h2>"
+$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>Computer Report - $date</h1><h2>System Information</h2>"
 
 # Create computer object and html
 $perfmonProps = @{
