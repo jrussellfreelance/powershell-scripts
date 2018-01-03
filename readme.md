@@ -95,7 +95,7 @@ ssh-new-db-mongodb.ps1: Connects to a Linux server and creates a MongoDB databas
 
 ssh-new-db-mysql.ps1: Connects to a Linux server and creates a MySQL database.
 
-ssh-new-wordpress-port.ps1: Connects to a Linux server and creates a Wordpress instance running on a port.
+ssh-new-wordpress-port.ps1: Connects to a Linux server and creates a Wordpress instance running on a port.  ***NOTE:*** This script has been removed temporarily until I have time to fix it.
 
 ssh-restart-web.ps1: Connects to a Linux server and restarts the nginx and php-fpm services.
 
