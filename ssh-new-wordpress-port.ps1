@@ -155,3 +155,4 @@ $return = $stream.Read()
 Write-Host $return
 # Finished
 New-BurntToastNotification -Text "The new Wordpress instance has been created" -AppLogo $null -Silent
+Remove-SSHSession -SessionId 0

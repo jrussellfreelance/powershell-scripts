@@ -1,4 +1,4 @@
-﻿# This script restarts the nginx and php-fpm services on the specified server
+﻿# This script stops the nginx and php-fpm services on the specified server
 # Grab server IP
 Do {
 	$server = Read-Host "Please enter the IP of the Linux server"
@@ -12,12 +12,12 @@ $session = New-SSHSession -ComputerName $server -Credential $creds
 $secPass = ConvertTo-SecureString $creds.Password -AsPlainText -Force
 # Start Shell Stream
 $stream = $session.Session.CreateShellStream("PS-SSH", 0, 0, 0, 0, 1000)
-# Restart nginx and php-fpm
-$result = Invoke-SSHStreamExpectSecureAction -ShellStream $stream -Command "sudo systemctl restart php7.0-fpm"  -ExpectString "[sudo] password for $($user):" -SecureAction $creds.Password
+# Stop nginx and php-fpm
+$result = Invoke-SSHStreamExpectSecureAction -ShellStream $stream -Command "sudo systemctl stop php7.0-fpm"  -ExpectString "[sudo] password for $($user):" -SecureAction $creds.Password
 Start-Sleep -Seconds 1
 $return = $stream.Read()
 Write-Host $return
-$result = Invoke-SSHStreamExpectSecureAction -ShellStream $stream -Command "sudo systemctl restart nginx"  -ExpectString "[sudo] password for $($user):" -SecureAction $creds.Password
+$result = Invoke-SSHStreamExpectSecureAction -ShellStream $stream -Command "sudo systemctl stop nginx"  -ExpectString "[sudo] password for $($user):" -SecureAction $creds.Password
 Start-Sleep -Seconds 1
 $return = $stream.Read()
 Write-Host $return

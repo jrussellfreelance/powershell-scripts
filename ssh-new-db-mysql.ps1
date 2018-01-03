@@ -41,3 +41,4 @@ Start-Sleep -Seconds 1
 $return = $stream.Read()
 Write-Host $return
 New-BurntToastNotification -Text "The MySQL database has been created" -AppLogo $null -Silent
+Remove-SSHSession -SessionId 0

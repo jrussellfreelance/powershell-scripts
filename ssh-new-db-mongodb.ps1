@@ -38,3 +38,4 @@ Start-Sleep -Seconds 1
 $return = $stream.Read()
 Write-Host $return
 New-BurntToastNotification -Text "The MongoDB database has been created" -AppLogo $null -Silent
+Remove-SSHSession -SessionId 0
