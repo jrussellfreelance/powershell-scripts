@@ -85,7 +85,7 @@ remove-all-print-jobs.ps1: Removes all jobs from all printers.
 
 send-email.ps1: Contains a function that sends an email.
 
-server-system-info-website.ps1: Grabs system information using WMI for each server listed in servers.txt and outputs it into the web root of a website.
+server-system-info-website.ps1: Grabs system information using WMI for each server listed in servers.txt, generates an HTML report, and outputs it into the web root of a website.
 
 setup-domain-controller.ps1: Installs features for a domain controller.
 
