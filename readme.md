@@ -89,6 +89,8 @@ setup-file-server.ps1: Installs features for a file server.
 
 setup-print-server.ps1: Installs features for a print server.
 
+ssh-apt-upgrade-ubuntu.ps1: Performs a software upgrade on a Ubuntu or Debian server.
+
 ssh-new-db-mongodb.ps1: Connects to a Linux server and creates a MongoDB database.
 
 ssh-new-db-mysql.ps1: Connects to a Linux server and creates a MySQL database.
@@ -98,6 +100,10 @@ ssh-new-wordpress-port.ps1: Connects to a Linux server and creates a Wordpress i
 ssh-restart-web.ps1: Connects to a Linux server and restarts the nginx and php-fpm services.
 
 ssh-rmwp.ps1: Connects to a Linux server and deletes a Wordpress instance.
+
+ssh-start-web.ps1: Connects to a Linux server and starts the nginx and php-fpm services.
+
+ssh-stop-web.ps1: Connects to a Linux server and stops the nginx and php-fpm services.
 
 system-info-html-report-local.ps1: Generates an HTML report of the local machine's system information.
 
