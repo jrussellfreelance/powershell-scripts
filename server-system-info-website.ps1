@@ -25,7 +25,7 @@ $computerProps = @{
 	'Last Boot'= $boot;
 }
 $computer = New-Object -TypeName PSObject -Prop $computerProps
-$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>Computer Report</h1><h2>System Information</h2>"
+$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>$server Report</h1><h2>System Information</h2>"
 
 # List network stats
 $ips = Get-WmiObject -ComputerName $server Win32_NetworkAdapterConfiguration | Where-Object { $_.IPAddress -ne $null } | Select-Object DNSHostName,Description,@{Label="IP Address"; Expression={($_.IPAddress[0])}},@{Label="Default Gateway"; Expression={($_.DefaultIPGateway[0])}},MACAddress
