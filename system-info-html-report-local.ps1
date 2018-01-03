@@ -26,7 +26,7 @@ $computerProps = @{
 	'Last Boot'= $boot
 }
 $computer = New-Object -TypeName PSObject -Prop $computerProps
-$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>Computer Report</h1><h2>System Information</h2>"
+$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>Computer Report - $(Get-Date)</h1><h2>System Information</h2>"
 
 # Create computer object and html
 $perfmonProps = @{

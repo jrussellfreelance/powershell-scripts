@@ -4,6 +4,61 @@ $servers = Get-Content "servers.txt"
 # Specify the path to the webroot here
 $webroot = "" # example: \\webserver\c$\inetpub\wwwroot
 $indexpath = "$webroot\index.html"
+
+# Create HTML header
+$head = @"
+	<title>Server Report</title>
+	<style>
+		body {
+			background-color: #FFFFFF;
+			font-family: sans-serif;
+		}
+
+        a {
+            color: #666666;
+        }
+
+        a:hover {
+            color: #1E87F0;
+        }
+
+		h1 {
+			color: #1E87F0;
+		}
+
+		h2 {
+			color: #1E87F0;
+		}
+
+		table {
+			background-color: #1E87F0;
+		}
+
+		td {
+			background-color: #FFFFFF;
+			color: #666666;
+			padding: 3px;
+		}
+
+		th {
+			background-color: #1E87F0;
+			color: #FFFFFF;
+			text-align: left;
+			padding: 3px;
+		}
+	</style>
+"@
+
+# Create index.html
+$indexHtml = ""
+$indexHtml += "<h1>Server Health Report</h1>"
+$indexHtml += "<table><tr><th>Server Name</th></tr>"
+foreach ($server in $servers) {
+    $indexHtml += "<tr><td><a href='/$server.html'>$server</a></td></tr>"
+}
+$indexHtml += "</table>"
+ConvertTo-Html -Head $head -Body $indexHtml | Out-File $indexpath
+
 # Loop through servers
 foreach ($server in $servers) {
 # Create file path
@@ -62,62 +117,8 @@ $servicesHtml = $services | ConvertTo-Html -Fragment -PreContent "<h2>Running Se
 
 # Select all start up programs
 $startup= Get-WmiObject -ComputerName $server Win32_startupCommand | Sort-Object Caption | Select-Object Caption,User,Command
-$startupHtml = $startup | ConvertTo-Html -Fragment -PreContent "<h2>Startup Commands</h2>"
-
-# Create HTML file
-$head = @"
-	<title>Server Report</title>
-	<style>
-		body {
-			background-color: #FFFFFF;
-			font-family: sans-serif;
-		}
-
-        a {
-            color: #666666;
-        }
-
-        a:hover {
-            color: #1E87F0;
-        }
-
-		h1 {
-			color: #1E87F0;
-		}
-
-		h2 {
-			color: #1E87F0;
-		}
-
-		table {
-			background-color: #1E87F0;
-		}
-
-		td {
-			background-color: #FFFFFF;
-			color: #666666;
-			padding: 3px;
-		}
-
-		th {
-			background-color: #1E87F0;
-			color: #FFFFFF;
-			text-align: left;
-			padding: 3px;
-		}
-	</style>
-"@
+$startupHtml = $startup | ConvertTo-Html
 
 # Convert everything to HTML and output to file
 ConvertTo-Html -Head $head -Body "$computerHtml $perfmonHtml $ipsHtml $disksHtml $processesHtml $servicesHtml $startupHtml" | Out-File $filepath
 }
-
-$indexHtml = ""
-$indexHtml += "<h1>Server Health Report</h1>"
-$indexHtml += "<table><tr><th>Server Name</th></tr><tr>"
-foreach ($server in $servers) {
-    $indexHtml += "<td><a href='/$server'>$server</a></td>"
-}
-$indexHtml += "</tr></table>"
-
-ConvertTo-Html -Head $head -Body $indexHtml | Out-File $indexpath
