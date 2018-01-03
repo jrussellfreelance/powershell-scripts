@@ -63,6 +63,8 @@ ConvertTo-Html -Head $head -Body $indexHtml | Out-File $indexpath
 foreach ($server in $servers) {
 # Create file path
 $filepath = "$webroot\$server.html"
+# Get date
+$date = Get-Date
 # Computer info
 $ram = [math]::Round((Get-WmiObject -ComputerName $server Win32_OperatingSystem | Select -ExpandProperty TotalVisibleMemorySize)/1MB, 2)
 $name = Get-WmiObject -ComputerName $server Win32_ComputerSystem | Select -ExpandProperty Name
@@ -87,7 +89,7 @@ $computerProps = @{
 	'Last Boot'= $boot
 }
 $computer = New-Object -TypeName PSObject -Prop $computerProps
-$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>$server Report - $(Get-Date)</h1><h2>System Information</h2>"
+$computerHtml = $computer | ConvertTo-Html -Fragment -PreContent "<h1>$server Report - $date</h1><h2>System Information</h2>"
 
 # Create computer object and html
 $perfmonProps = @{
