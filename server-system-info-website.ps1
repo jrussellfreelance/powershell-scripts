@@ -80,6 +80,6 @@ $head = @"
 "@
 
 # Convert everything to HTML and output to file
-ConvertTo-Html -Head $head -Body "$computerHtml $ipHtml $disksHtml $processesHtml $servicesHtml" | Out-File $filepath
+ConvertTo-Html -Head $head -Body "$computerHtml $ipsHtml $disksHtml $processesHtml $servicesHtml" | Out-File $filepath
 
 }
