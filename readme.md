@@ -25,7 +25,11 @@ AD-get-server-status.ps1: Tests to see if all the computers in AD are up and run
 
 AD-passwords-expiring-csv.ps1: Creates a csv of Active Directory users whose passwords are expiring in the next 7 days.
 
-AD-passwords-expiring-soon-email.ps1: Sends an email to any user whose password expires in the next 7 days
+AD-passwords-expiring-soon-email.ps1: Sends an email to any user whose password expires in the next 7 days.
+
+IIS-delete-site.ps1: Deletes a website, app pool, and dns entry on remote servers.
+
+IIS-restart-all-apppools.ps1: Restarts all web app pools on a remote server.
 
 add-folder-to-path-env.ps1: Adds a folder to the Path environment variable
 
@@ -49,9 +53,9 @@ create-startup-powershell-script.ps1: Creates a scheduled task of a Powershell s
 
 create-symbolic-link.ps1: Creates a symbolic link.
 
-delete-IIS-site.ps1: Deletes a website, app pool, and dns entry on remote servers.
-
 download-web-files.ps1: Downloads all the files in a web file directory.
+
+file-search.ps1: A simple file search utility.
 
 file-watcher.ps1: Watches a folder for the creation of files, then runs a script when that happens.
 
@@ -70,6 +74,8 @@ list-gce.ps1: This is a simple menu for listing resources in Google Cloud Platfo
 list-tables-mysql.ps1: Lists the tables from a MySQL database in a CSV.
 
 list-tables-sqlserver.ps1: Lists the tables from a SQL Server database in a CSV.
+
+list-top-ten-processes.ps1: Lists the top ten running processes by memory consumption.
 
 monitor-webpage.ps1: Monitors a web page, sending an email if the site goes down.
 
