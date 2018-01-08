@@ -1,7 +1,8 @@
-﻿$reportPath = $PSScriptRoot + "\ActiveDirectoryComputers.html"
-
+﻿# This script retrieves all the computers listed in Active Directory and creates an html report.
+$reportPath = $PSScriptRoot + "\ActiveDirectoryComputers.html"
+# Grab list of computers in Active Directory
 $servers = Get-ADComputer -Filter *
-
+# Convert list to HTML
 $serversHtml = $servers | Select-Object DNSHostName,Enabled,Name,ObjectClass,ObjectGUID,SamAccountName | ConvertTo-Html -Fragment -PreContent "<h2>Active Directory Computers</h2>"
 
 # Create HTML file
@@ -38,23 +39,7 @@ $head = @"
 			padding: 3px;
 		}
 	</style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-      function filter(element) {
-        var value = `$(element).val().toLowerCase();
-        `$("table > tr").hide().filter(function() {
-          return `$(this).children('td:first-child').text().toLowerCase().indexOf(value) > -1;
-        }).show();
-      }
-      `$('#search').keyup(function() {
-        filter(this);
-      });
-    </script>
-"@
-
-$searchbar = @"
-    <input type='text' placeholder='Search by DNS Host Name...' id='search' />
 "@
 
 # Convert everything to HTML and output to file
-ConvertTo-Html -Head $head -Body "$searchbar$serversHtml" | Out-File $reportPath
+ConvertTo-Html -Head $head -Body $serversHtml | Out-File $reportPath

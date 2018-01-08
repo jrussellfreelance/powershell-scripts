@@ -19,6 +19,10 @@ Here is a brief description of each script:
 
 AD-computers-html-report.ps1: Produces an html file listing all computers in Active Directory.
 
+AD-computers-network-html-report.ps1: Produces an html file listing the network configuration of all computers in Active Directory.
+
+AD-get-server-status.ps1: Tests to see if all the computers in AD are up and running, and creates two text files listing connected servers and failed servers.
+
 AD-passwords-expiring-csv.ps1: Creates a csv of Active Directory users whose passwords are expiring in the next 7 days.
 
 AD-passwords-expiring-soon-email.ps1: Sends an email to any user whose password expires in the next 7 days
@@ -52,8 +56,6 @@ download-web-files.ps1: Downloads all the files in a web file directory.
 file-watcher.ps1: Watches a folder for the creation of files, then runs a script when that happens.
 
 get-cmdlets-list.ps1: Creates a list of cmdlets.
-
-get-inactive-servers.ps1: Tests to see if all the computers in AD are up and running.
 
 get-module-commands.ps1: Creates a list of cmdlets for the specified module.
 
