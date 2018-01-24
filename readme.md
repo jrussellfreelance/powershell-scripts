@@ -59,6 +59,8 @@ file-search.ps1: A simple file search utility.
 
 file-watcher.ps1: Watches a folder for the creation of files, then runs a script when that happens.
 
+flancy-sys-info-ws.ps1: Creates a service for remotely managing a server.
+
 get-cmdlets-list.ps1: Creates a list of cmdlets.
 
 get-module-commands.ps1: Creates a list of cmdlets for the specified module.
@@ -107,11 +109,7 @@ ssh-new-db-mongodb.ps1: Connects to a Linux server and creates a MongoDB databas
 
 ssh-new-db-mysql.ps1: Connects to a Linux server and creates a MySQL database.
 
-ssh-new-wordpress-port.ps1: Connects to a Linux server and creates a Wordpress instance running on a port.  ***NOTE:*** This script has been removed temporarily until I have time to fix it.
-
 ssh-restart-web.ps1: Connects to a Linux server and restarts the nginx and php-fpm services.
-
-ssh-rmwp.ps1: Connects to a Linux server and deletes a Wordpress instance.
 
 ssh-start-web.ps1: Connects to a Linux server and starts the nginx and php-fpm services.
 
