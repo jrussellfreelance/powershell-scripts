@@ -1,5 +1,6 @@
 # This script exports a csv with passwords expiring that week
 # Declare expiring soon group variable
+Import-Module ActiveDirectory
 $expiring = @()
 # Grab AD Users that are enabled, and select the properties we need
 $users = Get-ADUser -Filter {Enabled -eq $true -and PasswordNeverExpires -eq $false} -Properties "DisplayName", "mail", "PasswordLastSet"
