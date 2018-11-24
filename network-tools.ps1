@@ -1,7 +1,7 @@
 ﻿# This script is a simple menu of quick network tools.  However, you must first install the modules in network-tools-install-modules.ps1
 $items = @()
 # Ping host
-$ping = New-SimpleMenuItem -Title "Ping-Host" -Action {
+$ping = New-SMMenuItem -Title "Ping-Host" -Action {
     Do {
 	    $hostname = Read-Host "Please enter the host you want to ping"
     }
@@ -10,7 +10,7 @@ $ping = New-SimpleMenuItem -Title "Ping-Host" -Action {
 }
 $items += $ping
 # Test Url
-$test = New-SimpleMenuItem -Title "Test-Uri" -Action {
+$test = New-SMMenuItem -Title "Test-Uri" -Action {
     Do {
 	    $url = Read-Host "Please enter the url you want to test"
     }
@@ -19,7 +19,7 @@ $test = New-SimpleMenuItem -Title "Test-Uri" -Action {
 }
 $items += $test
 # Scan Ports
-$scan = New-SimpleMenuItem -Title "Start-PortScan" -Action {
+$scan = New-SMMenuItem -Title "Start-PortScan" -Action {
     Do {
 	    $hostname = Read-Host "Please enter the host you want to scan"
     }
@@ -28,7 +28,7 @@ $scan = New-SimpleMenuItem -Title "Start-PortScan" -Action {
 }
 $items += $scan
 # Invoke Web Request
-$invoke = New-SimpleMenuItem -Title "Invoke-WebRequest" -Action {
+$invoke = New-SMMenuItem -Title "Invoke-WebRequest" -Action {
     Do {
 	    $url = Read-Host "Please enter the url you want to visit"
     }
@@ -37,6 +37,6 @@ $invoke = New-SimpleMenuItem -Title "Invoke-WebRequest" -Action {
 }
 $items += $invoke
 
-$menu = New-SimpleMenu -Title "Network Tools" -Items $items
+$menu = New-SMMenu -Title "Network Tools" -Items $items
 
-Invoke-SimpleMenu -Menu $menu
+Invoke-SMMenu -Menu $menu
