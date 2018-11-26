@@ -4,6 +4,7 @@ As requested, here is a list of all the scripts I could make generic, and that a
 Notes:
 * The scripts inside the two folders have GUIs.  To open the GUI, run the script that does not say designer at the end.
 * I use the BurntToast module a decent bit for notifications, so if you think you might use any of these scripts, I would go ahead and install that module. `Install-Module BurntToast`
+* I am in the process of changing almost every Read-Host or variable declaration to a script parameter, so that these scripts are automation friendly.  I have updated most scripts already, but still need to add parameter value validation and parameter description comments.
 
 PowerShellHelp is a script that launches a GUI allowing you to view the Powershell help for a cmdlet.
 
