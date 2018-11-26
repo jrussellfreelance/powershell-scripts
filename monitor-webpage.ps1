@@ -1,6 +1,6 @@
-﻿. $PSScriptRoot\send-email.ps1
+﻿param($url)
+. $PSScriptRoot\send-email.ps1
 # This script checks every hour to see if a website returns a 200 status code.  If it doesn't, the script sends an email.
-$url = "" # Specify the url of the website
 $interval = 3600 # You can change the interval, by default set as 1 hour
 while (1) {
     $request = Invoke-WebRequest -Uri $url

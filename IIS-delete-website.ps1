@@ -1,14 +1,6 @@
 # This script will go and delete the IIS website that you specify, along with the corresponding app pool and DNS entry.
 # It is meant to be run from your local computer, so you don't have to log in to your web server and domain controller to delete the website, all you have to do is run the script.
-
-Do {
-    $webserver = Read-Host "Enter the DNS name of the web server"
-}
-While ($webserver -eq "")
-Do {
-    $dnsserver = Read-Host "Enter the DNS name of the domain controller"
-}
-While ($dnsserver -eq "")
+param($webserver,$dnsserver)
 
 $sites = Invoke-Command -ComputerName $webserver -ScriptBlock {
 	$websites = Get-Website

@@ -1,11 +1,11 @@
 ﻿# This script starts the nginx and php-fpm services on the specified server
-# Grab server IP
-Do {
-	$server = Read-Host "Please enter the IP of the Linux server"
-}
-While ($server  -eq "")
-# Grab credentials
-$creds = Get-Credential
+param($server,
+$username,
+$password
+)
+# Create credential object based on parameters
+$secpasswd = ConvertTo-SecureString $password -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ($username, $secpasswd)
 # Create SSH session
 $session = New-SSHSession -ComputerName $server -Credential $creds
 # Convert entered password to secure string

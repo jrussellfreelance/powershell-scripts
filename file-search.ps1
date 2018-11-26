@@ -1,15 +1,6 @@
 ﻿# This script serves as a quick Powershell replacement to the search functionality in Windows.
-# After you enter a root folder and a search term, the script will list all files and folders matching that phrase.
-# Grab root folder path
-Do {
-	$path = Read-Host "Please enter the full path of the folder you want to search"
-}
-While ($path  -eq "")
-# Grab search term
-Do {
-	$term = Read-Host "Please enter the search term"
-}
-While ($term  -eq "")
+# After you pass in a root folder and a search term, the script will list all files and folders matching that phrase.
+param($path,$term)
 # Recursive search function
 Write-Host "Results:"
 function Search-Folder($FilePath, $SearchTerm) {

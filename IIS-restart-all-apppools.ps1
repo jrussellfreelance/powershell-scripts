@@ -1,8 +1,5 @@
 ﻿# This script remotely restarts all the web app pools on the specified web server
-Do {
-    $webserver = Read-Host "Enter the DNS name of the web server"
-}
-While ($webserver -eq "")
+param($webserver)
 # Invoke command on remote web server
 Invoke-Command -ComputerName $webserver -ScriptBlock {
     Import-Module WebAdministration

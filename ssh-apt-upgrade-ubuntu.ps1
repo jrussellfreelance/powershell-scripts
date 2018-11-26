@@ -1,11 +1,12 @@
 ﻿# This script performs a software update on a Ubuntu or Debian server
-# Grab server IP
-Do {
-	$server = Read-Host "Please enter the IP of the Linux server"
-}
-While ($server  -eq "")
-# Grab credentials
-$creds = Get-Credential
+param(
+$server,
+$username,
+$password
+)
+# Create credential object based on parameters
+$secpasswd = ConvertTo-SecureString $password -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ($username, $secpasswd)
 $user = $creds.UserName
 # Create SSH session
 $session = New-SSHSession -ComputerName $server -Credential $creds
@@ -17,7 +18,7 @@ $result = Invoke-SSHStreamExpectSecureAction -ShellStream $stream -Command "apt-
 Start-Sleep -Seconds 30
 $return = $stream.Read()
 Write-Host $return
-# Run apt=get upgrade
+# Run apt-get upgrade
 $result = Invoke-SSHStreamExpectSecureAction -ShellStream $stream -Command "apt-get upgrade" -ExpectString "[sudo] password for $($user):" -SecureAction $creds.Password
 # Wait 2 minutes for apt-get upgrade to run
 Start-Sleep -Seconds 120
