@@ -1,7 +1,8 @@
 ﻿# This script restarts the nginx and php-fpm services on the specified server
-param($server,
-$username,
-$password
+param(
+[Parameter(Mandatory=$true)]$server,
+[Parameter(Mandatory=$true)]$username,
+[Parameter(Mandatory=$true)]$password
 )
 # Create credential object based on parameters
 $secpasswd = ConvertTo-SecureString $password -AsPlainText -Force

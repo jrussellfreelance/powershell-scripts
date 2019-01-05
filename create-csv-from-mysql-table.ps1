@@ -1,10 +1,15 @@
 ﻿# Install-Module InvokeQuery
 # Run the above command if you do not have this module
 param(
+[Parameter(Mandatory=$true)]
 $server,
+[Parameter(Mandatory=$true)]
 $database,
+[Parameter(Mandatory=$true)]
 $dbuser,
+[Parameter(Mandatory=$true)]
 $dbpass,
+[Parameter(Mandatory=$true)]
 $query
 )
 if (($server -eq "") -or ($server -eq $null)) {

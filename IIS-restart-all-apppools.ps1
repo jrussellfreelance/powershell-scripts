@@ -1,5 +1,7 @@
 ﻿# This script remotely restarts all the web app pools on the specified web server
-param($webserver)
+param(
+[Parameter(Mandatory=$true)]$webserver
+)
 # Invoke command on remote web server
 Invoke-Command -ComputerName $webserver -ScriptBlock {
     Import-Module WebAdministration

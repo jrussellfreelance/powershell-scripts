@@ -1,7 +1,10 @@
 ﻿# This script performs a software update on a Ubuntu or Debian server
 param(
+[Parameter(Mandatory=$true)]
 $server,
+[Parameter(Mandatory=$true)]
 $username,
+[Parameter(Mandatory=$true)]
 $password
 )
 # Create credential object based on parameters

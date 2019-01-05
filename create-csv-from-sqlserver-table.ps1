@@ -1,6 +1,12 @@
 ﻿# Install-Module InvokeQuery
 # Run the above command if you do not have this module
-param($server,$database,$query,$username,$password)
+param(
+[Parameter(Mandatory=$true)]$server,
+[Parameter(Mandatory=$true)]$database,
+[Parameter(Mandatory=$true)]$query,
+[Parameter(Mandatory=$true)]$username,
+[Parameter(Mandatory=$true)]$password
+)
 if (($server -eq "") -or ($server -eq $null)) {
     Write-Host "Please specify a server"
 }

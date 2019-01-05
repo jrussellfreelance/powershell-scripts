@@ -1,6 +1,11 @@
 ﻿# This script serves as a quick Powershell replacement to the search functionality in Windows.
 # After you pass in a root folder and a search term, the script will list all files and folders matching that phrase.
-param($path,$term)
+param(
+[Parameter(Mandatory=$true)]
+$path,
+[Parameter(Mandatory=$true)]
+$term
+)
 # Recursive search function
 Write-Host "Results:"
 function Search-Folder($FilePath, $SearchTerm) {

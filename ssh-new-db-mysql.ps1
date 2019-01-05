@@ -1,11 +1,18 @@
 ﻿# This script creates a new MySQL database on the Linux host
 param(
+[Parameter(Mandatory=$true)]
 $server,
+[Parameter(Mandatory=$true)]
 $username,
+[Parameter(Mandatory=$true)]
 $password,
+[Parameter(Mandatory=$true)]
 $NEWDB,
+[Parameter(Mandatory=$true)]
 $NEWUSER,
+[Parameter(Mandatory=$true)]
 $NEWPWD,
+[Parameter(Mandatory=$true)]
 $ROOTPWD
 )
 # Create credential object based on parameters

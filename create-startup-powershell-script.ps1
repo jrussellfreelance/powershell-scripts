@@ -1,8 +1,12 @@
 ﻿# This script can be used to quickly schedule a powershell script to be run on start up.  In it I assume some basic settings for the sake of simplicity.
 param(
+[Parameter(Mandatory=$true)]
 $name,
+[Parameter(Mandatory=$true)]
 $script,
+[Parameter(Mandatory=$true)]
 $user,
+[Parameter(Mandatory=$true)]
 $desc
 )
 # Create action object

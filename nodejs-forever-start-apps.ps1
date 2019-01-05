@@ -1,7 +1,7 @@
 ﻿# This script loops through every folder in a directory and starts all the Node.js apps inside them.
 # This script is dependent on every one of your Node.js entry point files having the same name, like in this case, server.js
 # You also need to have forever or PM2 installed to use lines 12 or 14.
-param($webroot)
+param([Parameter(Mandatory=$true)]$webroot)
 # Get list of folders
 $folders = Get-ChildItem $webroot
 # Loop through folders
