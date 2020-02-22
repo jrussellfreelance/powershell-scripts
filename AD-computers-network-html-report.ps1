@@ -21,31 +21,31 @@ $head = @"
 	<title>AD Computer List</title>
 	<style>
 		body {
-			background-color: #FFFFFF;
+			background-color: #282A36;
 			font-family: sans-serif;
 		}
 
 		h1 {
-			color: #1E87F0;
+			color: #FF7575;
 		}
 
 		h2 {
-			color: #1E87F0;
+			color: #E56969;
 		}
 
 		table {
-			background-color: #1E87F0;
+			background-color: #363949;
 		}
 
 		td {
-			background-color: #FFFFFF;
-			color: #666666;
+			background-color: #363949;
+			color: #FF7575;
 			padding: 3px;
 		}
 
 		th {
-			background-color: #1E87F0;
-			color: #FFFFFF;
+			background-color: #363949;
+			color: #FF7575;
 			text-align: left;
 			padding: 3px;
 		}
