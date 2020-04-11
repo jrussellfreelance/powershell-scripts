@@ -63,36 +63,38 @@ $head = @"
 	<title>Computer Report</title>
 	<style>
 		body {
-			background-color: #FFFFFF;
+			background-color: #282A36;
 			font-family: sans-serif;
 		}
 
 		h1 {
-			color: #1E87F0;
+			color: #FF7575;
 		}
 
 		h2 {
-			color: #1E87F0;
+			color: #E56969;
 		}
 
 		table {
-			background-color: #1E87F0;
+			background-color: #363949;
+            border-collapse: collapse;
 		}
 
 		td {
-			background-color: #FFFFFF;
-			color: #666666;
-			padding: 3px;
+			border: 2px solid #282A36;
+			background-color: #363949;
+			color: #FF7575;
+			padding: 5px;
 		}
 
 		th {
-			background-color: #1E87F0;
-			color: #FFFFFF;
+			border: 2px solid #282A36;
+			background-color: #363949;
+			color: #FF7575;
 			text-align: left;
-			padding: 3px;
+			padding: 5px;
 		}
 	</style>
 "@
-
 # Convert everything to HTML and output to file
 ConvertTo-Html -Head $head -Body "$computerHtml $perfmonHtml $ipsHtml $disksHtml $processesHtml $servicesHtml $startupHtml" | Out-File $reportPath

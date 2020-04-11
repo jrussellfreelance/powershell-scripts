@@ -24,19 +24,22 @@ $head = @"
 
 		table {
 			background-color: #363949;
+            border-collapse: collapse;
 		}
 
 		td {
+			border: 2px solid #282A36;
 			background-color: #363949;
 			color: #FF7575;
-			padding: 3px;
+			padding: 5px;
 		}
 
 		th {
+			border: 2px solid #282A36;
 			background-color: #363949;
 			color: #FF7575;
 			text-align: left;
-			padding: 3px;
+			padding: 5px;
 		}
 	</style>
 "@
