@@ -1,0 +1,6 @@
+PSConsoleHostReadLine
+Get-PSReadLineKeyHandler
+Get-PSReadLineOption
+Remove-PSReadLineKeyHandler
+Set-PSReadLineKeyHandler
+Set-PSReadLineOption

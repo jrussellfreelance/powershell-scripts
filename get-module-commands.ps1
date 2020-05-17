@@ -5,5 +5,5 @@ $module = Read-Host "Please enter the module name"
 $commands = Get-Command -Module $module
 # Loop through commands and add each to file
 foreach ($command in $commands) {
-    Add-Content "$PSScriptRoot\$module Commands.txt" $command.Name
+    Add-Content "$PSScriptRoot/$module-Commands.txt" $command.Name
 }
